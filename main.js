@@ -40,7 +40,7 @@ const app ={
       singer: "GERNANG",
       path: "./assets/mp3/1-800-love.mp3",
       image:
-        "https://lh3.googleusercontent.com/proxy/IyW0tfUkRRhSKWs0er51IrVc3kp091goEJOZB7077ORUMuyqfrzz-VCJx-1X21I3dbv0Hl96bCNArUgpHviRcDYuvUBQTl2AEyKS"
+        "https://images.genius.com/13f13edf1524ddeb4284b5d8a0e7dffe.1000x1000x1.jpg"
     },
     {
       name: "CUA",
