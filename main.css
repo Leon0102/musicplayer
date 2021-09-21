@@ -145,7 +145,6 @@ header h2 {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   transform: rotate(-90deg);
-  /* display: none; */
 }
 .volume::before {
   position: fixed;

@@ -6,7 +6,7 @@ const PLAYER_STORAGE_KEY ='Leon_Player';
 const heading = $('header h2');
 const cdThumb = $('.cd-thumb');
 const audio = $('#audio');
-const volume = $('#volume');
+const volume = $('.volume');
 const cd  = $('.cd');
 const progress = $('#progress');
 const nextBtn = $('.btn-next');
@@ -22,7 +22,6 @@ const playlist =$('.playlist')
 
 const timer = $('.progress__current');
 const songDuration = $('.progress__duration');
-
 
 const app ={
     currentIndex:0,
@@ -78,6 +77,27 @@ const app ={
       path: "./assets/mp3/5050.mp3",
       image:
         "https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/9/7/0/2/9702062cdfc73808f28639e07f3e2874.jpg"
+    },
+    {
+      name: "Em Biết Mà",
+      singer: "HIEUTHUHAI",
+      path: "./assets/mp3/Embietma.mp3",
+      image:
+        "https://lyricvn.com/wp-content/uploads/2021/03/0c3d7b39110b1a87ed3c6855f5929887.jpg"
+    },
+    {
+      name: "Đen Đá Không Đường",
+      singer: "HIEUTHUHAI",
+      path: "./assets/mp3/Dendakhongduong.mp3",
+      image:
+        "https://i1.sndcdn.com/artworks-000635802358-j21vmi-t500x500.jpg"
+    },
+    {
+      name: "Phải Là Yêu",
+      singer: "GERNANG",
+      path: "./assets/mp3/PhaiLaYeu.mp3",
+      image:
+        "https://i1.sndcdn.com/artworks-zLsULuhK0IOyTg7k-Ml7QFA-t500x500.jpg"
     }
     ],
     setConfig: function(key,value) {
@@ -238,6 +258,7 @@ const app ={
         // Xử lý volumeme
         volume.value=100;
         volume.oninput = function () {
+            
             if(volume.value > 0)
             {
                 audio.volume =volume.value /100;
@@ -252,6 +273,28 @@ const app ={
                 $('.fa-volume-mute ').classList.remove('disabled');
             }
         };
+        var currentVollume;
+        volumeBtn.onclick = function(e){
+            if(audio.volume)
+            {
+                currentVollume = audio.volume;
+            }
+            const volumeNode = $('.volume-icon:not(.disabled');
+            if(volumeNode){
+                $('.volume-icon.disabled').classList.remove('disabled');
+                volumeNode.classList.add('disabled');
+                if(audio.volume){
+                    audio.volume =0;
+                    volume.value=0;
+                     volume.innerHTML =`<style>.volume::before{ width:${volume.value}% }</style>`;
+                }
+                else{
+                    audio.volume =currentVollume;
+                    volume.value=currentVollume*100;
+                    volume.innerHTML =`<style>.volume::before{ width:${currentVollume*100}% }</style>`;
+                }
+                }
+            }
 
     },
     getCurrentsong: function(){
