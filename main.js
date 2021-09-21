@@ -6,12 +6,14 @@ const PLAYER_STORAGE_KEY ='Leon_Player';
 const heading = $('header h2');
 const cdThumb = $('.cd-thumb');
 const audio = $('#audio');
+const volume = $('#volume');
 const cd  = $('.cd');
 const progress = $('#progress');
 const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
+const volumeBtn = $('.btn-volume');
 
 const playBtn = $('.btn-toggle-play');
 const player = $('.player');
@@ -232,8 +234,25 @@ const app ={
                 }
                 // Xử lý khi click vào option
             }
-
         }
+        // Xử lý volumeme
+        volume.value=100;
+        volume.oninput = function () {
+            if(volume.value > 0)
+            {
+                audio.volume =volume.value /100;
+                volume.innerHTML =`<style>.volume::before{ width:${volume.value}% }</style>`;
+                $('.fa-volume-mute').classList.add('disabled');
+                $('.fa-volume-up ').classList.remove('disabled');
+            }
+            else{
+                audio.volume=0;
+                volume.innerHTML =`<style>.volume::before{ width:0% }</style>`;
+                $('.fa-volume-up').classList.add('disabled');
+                $('.fa-volume-mute ').classList.remove('disabled');
+            }
+        };
+
     },
     getCurrentsong: function(){
         return this.songs[this.currentIndex];

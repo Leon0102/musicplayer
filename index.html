@@ -55,8 +55,14 @@
                     <i class="fas fa-random"></i>
                 </div>
             </div>
-
-            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+            <div class="song__bars">
+                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                <div class="btn btn-volume">
+                    <i class="fas fa-volume-up"></i>
+                    <i class="fas fa-volume-mute disabled"></i>
+                </div>
+            </div>
+            <input id="volume" class="volume" type="range" value="0" step="1" min="0" max="100">
             <div class="progress-bottom">
                 <span class="progress__current">00:00</span>
                 <span class="progress__duration">00:00</span>

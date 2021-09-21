@@ -42,7 +42,9 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 480px;
+  max-width: 550px;
+  left: 50%;
+  transform: translateX(-50%);
   border-bottom: 1px solid #ebebeb;
 }
 
@@ -108,6 +110,60 @@ header h2 {
   background-color: var(--primary-color);
 }
 
+.song__bars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Volume */
+.disabled {
+  display: none;
+}
+.btn.btn-volume {
+  color: #666;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  width: 30px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.volume {
+  width: 20%;
+  position: fixed;
+  right: -28px;
+  bottom: 144px;
+  -webkit-appearance: var(--primary-color);
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  transform: rotate(-90deg);
+  /* display: none; */
+}
+.volume::before {
+  position: fixed;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 6px;
+  left: 0px;
+  background-color: #ec1f55;
+}
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
 .progress {
   width: 100%;
   -webkit-appearance: none;
@@ -147,7 +203,9 @@ header h2 {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   margin-top: 18px;
 }
-
+.song:first-child {
+  margin-top: 64px;
+}
 .song.active {
   background-color: var(--primary-color);
 }
