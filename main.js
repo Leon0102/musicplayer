@@ -54,7 +54,7 @@ const app ={
       singer: "HIEUTHUHAI KNG",
       path: "./assets/mp3/Laviai-HIEUTHUHAIKNG.mp3",
       image:
-        "https://i.ytimg.com/vi/m4fcTm8NcjU/maxresdefault.jpg"
+        "https://static2.yan.vn/YanNews/202009/202009070217237566-89b85080-7579-4733-bb49-cf159829ee56.png"
     },
     {
       name: "MamaBoy",
