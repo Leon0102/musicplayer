@@ -54,7 +54,7 @@ const app ={
       singer: "HIEUTHUHAI KNG",
       path: "./assets/mp3/Laviai-HIEUTHUHAIKNG.mp3",
       image:
-        "https://lh3.googleusercontent.com/proxy/1low9-OUoW8XlRw8_XaRO9AvP-DTc_ezFpFBzhLTIG2scc10wzv5PlBjPALdhwhwnyPw98gtFNuGutl-iTcq_47AHkWWQsUTHANM"
+        "https://i.ytimg.com/vi/m4fcTm8NcjU/maxresdefault.jpg"
     },
     {
       name: "MamaBoy",
